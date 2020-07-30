@@ -1,0 +1,30 @@
+application:
+  salon:
+    name: "AR Salon and Day Spa Services"
+    address: "5260 Mac Drive"
+    city: "Grand Forks"
+    state: "ND 5"
+    zipcode: "58201"
+    phone: "203-626-1510"
+
+server:
+  port: "9090"
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    platform: "postgres"
+    url: "jdbc:postgresql://localhost:${POSTGRES_PORT}/postgres"
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+  jpa:
+    database: "postgresql"
+    show-sql: "true"
+    generate-ddl: "true"
+    hibernate:
+      ddl-auto: "create-drop"
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: "true"
